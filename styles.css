@@ -219,7 +219,8 @@ h3 {
 }
 
 .portrait {
-  margin: 0 0 1.2rem;
+  width: min(100%, 168px);
+  margin: 0 auto 1.2rem;
 }
 
 .portrait img {
