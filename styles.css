@@ -21,6 +21,11 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   color: var(--ink);
@@ -78,8 +83,9 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.25rem;
+  gap: 1rem 1.5rem;
   min-height: 68px;
+  flex-wrap: wrap;
 }
 
 .site-name {
@@ -88,15 +94,20 @@ a:focus-visible {
   font-size: 1.1rem;
   font-weight: 700;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: clamp(0.8rem, 2vw, 1.45rem);
+  justify-content: flex-end;
+  flex: 1 1 360px;
+  min-width: 0;
+  gap: clamp(0.65rem, 1.6vw, 1.25rem);
   color: var(--ink-soft);
   font-size: 0.93rem;
   font-weight: 650;
+  flex-wrap: wrap;
 }
 
 .nav a {
@@ -105,7 +116,7 @@ a:focus-visible {
 }
 
 .intro {
-  padding: 92px 0 58px;
+  padding: 78px 0 54px;
 }
 
 .page-grid {
@@ -113,6 +124,10 @@ a:focus-visible {
   grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
   gap: clamp(2rem, 6vw, 5rem);
   align-items: start;
+}
+
+.intro-main {
+  min-width: 0;
 }
 
 .kicker {
@@ -139,9 +154,9 @@ h2 {
 }
 
 h1 {
-  max-width: 780px;
+  max-width: 720px;
   margin-bottom: 1rem;
-  font-size: clamp(3.25rem, 7vw, 5.8rem);
+  font-size: clamp(2.65rem, 5.2vw, 4.75rem);
 }
 
 h2 {
@@ -155,10 +170,10 @@ h3 {
 }
 
 .lead {
-  max-width: 780px;
+  max-width: 760px;
   margin-bottom: 1.1rem;
   color: var(--navy);
-  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  font-size: clamp(1.12rem, 1.7vw, 1.36rem);
   line-height: 1.45;
 }
 
@@ -197,9 +212,24 @@ h3 {
 }
 
 .profile-panel {
+  min-width: 0;
   border-top: 4px solid var(--navy);
   background: var(--paper-alt);
   padding: 1.25rem;
+}
+
+.portrait {
+  margin: 0 0 1.2rem;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  object-fit: cover;
 }
 
 .profile-panel dl {
@@ -430,6 +460,18 @@ h3 {
 }
 
 @media (max-width: 900px) {
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: 0;
+    padding: 0.9rem 0;
+  }
+
+  .nav {
+    justify-content: flex-start;
+    flex: 0 1 auto;
+  }
+
   .page-grid,
   .section-layout,
   .contact-inner {
@@ -461,20 +503,13 @@ h3 {
     width: min(100% - 28px, var(--max));
   }
 
-  .header-inner {
-    align-items: flex-start;
-    flex-direction: column;
-    min-height: 0;
-    padding: 0.85rem 0;
-  }
-
   .nav {
     flex-wrap: wrap;
     gap: 0.55rem 0.9rem;
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.55rem;
   }
 
   .link-row {
