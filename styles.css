@@ -321,6 +321,12 @@ h3 {
   color: var(--muted);
 }
 
+.research-list .meta {
+  margin-top: 0.85rem;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
 .timeline {
   display: grid;
   gap: 1.05rem;
@@ -533,4 +539,44 @@ h3 {
   *::after {
     scroll-behavior: auto !important;
   }
+}
+
+/* Profile update, October 2026 */
+section[id] { scroll-margin-top: 100px; }
+.intro { padding-top: 64px; }
+.intro .kicker { letter-spacing: .06em; }
+.profile-panel dd { overflow-wrap: anywhere; }
+.portrait img { height: auto; aspect-ratio: 1 / 1; }
+.research-list { grid-template-columns: 1fr; border-left: 0; }
+.research-list article { min-height: 0; border-right: 0; padding: 1.35rem 0; }
+.research-links { margin-top: .8rem; font-weight: 650; }
+.project-status { color: var(--teal) !important; font-weight: 700; }
+.coursework { margin-top: 1.5rem; padding: 1rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.coursework summary { cursor: pointer; font-weight: 700; color: var(--navy); }
+.coursework p { margin: 1rem 0 0; }
+.download-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.2rem; margin: 2rem 0 0; }
+.download-card { border: 1px solid var(--line); padding: 1.5rem; background: var(--paper-alt); }
+.download-card h2 { font-size: 1.5rem; margin-bottom: .6rem; }
+.download-card p { color: var(--ink-soft); margin-bottom: .9rem; }
+.download-card .link-row { margin-top: .8rem; }
+.cv-content { max-width: 850px; padding: 1rem 0 4rem; }
+.cv-content section { margin-top: 2.5rem; }
+.cv-content h2 { font-size: 1.75rem; border-top: 1px solid var(--line); padding-top: 1.5rem; }
+.cv-content h3 { margin-top: 1.4rem; }
+.cv-content p { margin-bottom: .8rem; overflow-wrap: anywhere; }
+.cv-content .cv-bullet { padding-left: 1.15rem; position: relative; }
+.cv-content .cv-bullet::before { content: '•'; position: absolute; left: 0; color: var(--teal); }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 4px; }
+@media (max-width: 680px) {
+ .download-grid { grid-template-columns: 1fr; }
+ .section.section-muted { width: 100%; }
+ .intro { padding-top: 42px; }
+ section[id] { scroll-margin-top: 135px; }
+ .profile-panel { width: 100%; }
+}
+@media print {
+ .site-header, .skip-link, .download-grid, .contact, .footer { display: none; }
+ .intro, .section, .section-muted, .cv-content { width: 100%; padding: 0; background: white; }
+ .cv-content h2, .cv-content h3 { break-after: avoid; }
+ a { color: inherit; }
 }
